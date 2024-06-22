@@ -56,7 +56,7 @@ def makemkv(logfile, job):
     rawpath = setup_rawpath(job, os.path.join(str(job.config.RAW_PATH), str(job.title)))
     logging.info(f"Processing files to: {rawpath}")
     # Rip bluray
-    if (job.config.RIPMETHOD == "backup" or job.config.RIPMETHOD == "backup_dvd") and job.disctype == "bluray":
+    if (job.config.RIPMETHOD == "backup" or job.config.RIPMETHOD == "backup_dvd"):
         # backup method
         cmd = f'makemkvcon backup --decrypt {job.config.MKV_ARGS} --minlength={job.config.MINLENGTH}' \
               f'--progress={os.path.join(job.config.LOGPATH, "progress", str(job.job_id))}.log ' \
